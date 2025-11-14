@@ -28,6 +28,8 @@ public final class Constants {
     public static final double kTurretBaseMaxAngle = 300; 
     public static final double kTurretBaseMinAngle = 0;
 
+    public static final double kTrapezoidTimeIntervale = 0.02; // seconds
+
     public static final double kTurretBaseP = 0.1; // PID proportional gain
     public static final double kTurretBaseI = 0.0; // PID integral gain
     public static final double kTurretBaseD = 0.0; // PID derivative gain

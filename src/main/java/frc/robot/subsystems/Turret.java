@@ -170,7 +170,7 @@ public class Turret extends SubsystemBase {
   public void rotateBaseToAngle(double angle) {
     //set goal
     m_TrapezoidProfileBaseGoal.position = angle;
-    m_TrapezoidProfileBaseSetpoint = m_TrapezoidProfileBase.calculate(0.020, m_TrapezoidProfileBaseSetpoint, m_TrapezoidProfileBaseGoal);
+    m_TrapezoidProfileBaseSetpoint = m_TrapezoidProfileBase.calculate(kTrapezoidTimeIntervale, m_TrapezoidProfileBaseSetpoint, m_TrapezoidProfileBaseGoal);
 
     turretBasePositionControl.Position = m_TrapezoidProfileBaseSetpoint.position;
     turretBasePositionControl.Velocity = m_TrapezoidProfileBaseSetpoint.velocity;
@@ -183,7 +183,9 @@ public class Turret extends SubsystemBase {
     turretMotorAngle.set(speed);
   }
 
-  public void changeAngleToPosition(double position) {}
+  public void changeAngleToPosition(double position) {
+    
+  }
   
 
   //getters

@@ -1,0 +1,21 @@
+Patchpanel: group of connectors to patch into
+
+- high speed Canbus for drivebase     - low speed canbus for else 
+- mount for breaker 
+
+6-pin 
+canup 
+candown
+power
+
+
+new wire
+cat-5 (ethernet-5) - 500Mb/s (high speed)
+- crosstalk reduction (pair climbing over to another twisted pair)
+- 4 twisted pairs
+- flexibitlity 
+
+still using molex connector 
+
+Programming needs:
+- mount a limelight 
