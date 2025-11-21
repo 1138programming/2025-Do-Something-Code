@@ -183,6 +183,10 @@ public class Turret extends SubsystemBase {
  
   }
 
+  public void stopBaseMotor() {
+    turretMotorBase.set(0);
+  }
+
   //------------------------//
   //-----Angle-Functions----//
   //------------------------//
@@ -195,6 +199,12 @@ public class Turret extends SubsystemBase {
   public void changeAngleToPosition(double position) {
     turretMotorAngle.set(turretAnglePID.calculate(turretEncoderAngle.get(), position));
   }
+
+  //github im begging you pleaseeeee
+  
+  public void stopAngleMotor() {
+    turretMotorAngle.set(0);
+  }
   
 
   //getters
@@ -202,9 +212,20 @@ public class Turret extends SubsystemBase {
     return turretEncoderBase.getPosition().getValueAsDouble();
   }
 
+  public boolean isInRotationLimitsBase() {
+    boolean inBounds = getEncoderAngleBase() >= kTurretBaseMinAngle && getEncoderAngleBase() <= kTurretBaseMaxAngle;
+    return inBounds;
+  }
+
   public double getEncoderAngleTurret() {
     return turretEncoderAngle.get();
   }
+
+  public boolean isInAngleLimitsAngle() {
+    boolean inBounds = getEncoderAngleTurret() >= kTurretMinAngle && getEncoderAngleTurret() <= kTurretMaxAngle;
+    return inBounds;
+  }
+
 
 
   @Override
