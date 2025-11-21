@@ -162,6 +162,11 @@ public class Turret extends SubsystemBase {
     laserState = false;
   }
 
+
+  //------------------------//
+  //-----Base-Functions-----//
+  //------------------------//
+
   public void manualRotateBase(double speed) {
     speed = speed * kSpeedBaseModifier;
     turretMotorBase.set(speed);
@@ -178,13 +183,17 @@ public class Turret extends SubsystemBase {
  
   }
 
+  //------------------------//
+  //-----Angle-Functions----//
+  //------------------------//
+
   public void manualChangeAngle(double speed) {
     speed = speed * kSpeedAngleModifier;
     turretMotorAngle.set(speed);
   }
 
   public void changeAngleToPosition(double position) {
-    
+    turretMotorAngle.set(turretAnglePID.calculate(turretEncoderAngle.get(), position));
   }
   
 
